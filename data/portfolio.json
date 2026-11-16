@@ -1,0 +1,68 @@
+{
+  "_fonte": "Categorias e recortes herdados do repositório. As imagens ainda não existem (ver assets/img/README.md e docs/CHECKLIST-CONTEUDO.md). Textos são de vitrine, não legendas de obras reais.",
+  "categorias": [
+    { "id": "todos", "rotulo": "Todos" },
+    { "id": "social", "rotulo": "Social" },
+    { "id": "noiva", "rotulo": "Noiva" },
+    { "id": "gestante", "rotulo": "Gestante" },
+    { "id": "cabelo", "rotulo": "Cabelo" },
+    { "id": "making", "rotulo": "Making of" },
+    { "id": "artistico", "rotulo": "Artístico" }
+  ],
+  "obras": [
+    {
+      "id": "brilho-do-sim",
+      "categoria": "noiva",
+      "kicker": "Noiva",
+      "titulo": "Brilho do <em>Sim</em>",
+      "texto": "Pele luminosa, renda, o sim guardado em imagem. Cada detalhe conta uma história.",
+      "formato": "wide",
+      "imagem_placeholder": "assets/img/portfolio/noiva-brilho-do-sim.jpg"
+    },
+    {
+      "id": "corpo-tempo-luz",
+      "categoria": "gestante",
+      "kicker": "Gestante",
+      "titulo": "Corpo, tempo, <em>luz</em>",
+      "texto": "Ensaio para se sentir incrível agora — e guardar esse momento.",
+      "formato": "normal",
+      "imagem_placeholder": "assets/img/portfolio/gestante-corpo-tempo-luz.jpg"
+    },
+    {
+      "id": "a-melhor-versao",
+      "categoria": "social",
+      "kicker": "Social",
+      "titulo": "A melhor versão",
+      "texto": "Glam, madura, aniversário. Make que parece pele, não máscara.",
+      "formato": "normal",
+      "imagem_placeholder": "assets/img/portfolio/social-a-melhor-versao.jpg"
+    },
+    {
+      "id": "camadas-leves",
+      "categoria": "cabelo",
+      "kicker": "Cabelo",
+      "titulo": "Camadas <em>leves</em>",
+      "texto": "Caimento natural, movimento, acabamento. Sem cortes curtos.",
+      "formato": "normal",
+      "imagem_placeholder": "assets/img/portfolio/cabelo-camadas-leves.jpg"
+    },
+    {
+      "id": "o-antes-da-foto",
+      "categoria": "making",
+      "kicker": "Making of",
+      "titulo": "O antes da foto",
+      "texto": "Bastidores de aniversário, produção e o caminho até o clique.",
+      "formato": "normal",
+      "imagem_placeholder": "assets/img/portfolio/making-o-antes-da-foto.jpg"
+    },
+    {
+      "id": "o-outro-lado",
+      "categoria": "artistico",
+      "kicker": "Artístico",
+      "titulo": "O outro <em>lado</em>",
+      "texto": "Mood, editorial, fantasia. O olhar artístico — o recorte mais ousado, sem ser o tom do site inteiro.",
+      "formato": "dark",
+      "imagem_placeholder": "assets/img/portfolio/artistico-o-outro-lado.jpg"
+    }
+  ]
+}

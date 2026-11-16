@@ -1,0 +1,131 @@
+{
+  "_fonte": "Herdado do repositório (index.html da sessão anterior, a partir de prints/anexos da cliente). Preços e prazos: confirmar com a Hellen antes de publicar mudança. Não foram inventados nesta sessão.",
+  "combos": [
+    {
+      "id": "combo-1",
+      "kicker": "Combo 1",
+      "titulo": "Maquiagem + ensaio",
+      "preco": "R$ 300",
+      "preco_valor": 300,
+      "itens": [
+        "Maquiagem profissional",
+        "30 fotos digitais editadas",
+        "Até cerca de 2h30",
+        "Entrega em até 7 dias úteis"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "combo-2",
+      "kicker": "Combo 2",
+      "titulo": "Maquiagem + cabelo + ensaio",
+      "preco": "R$ 370",
+      "preco_valor": 370,
+      "itens": [
+        "Maquiagem profissional",
+        "Cabelo: lavagem, escova e babyliss/cachos",
+        "45 fotos digitais editadas",
+        "Até cerca de 3h30",
+        "Entrega em até 7 dias úteis"
+      ],
+      "destaque": true
+    },
+    {
+      "id": "combo-3",
+      "kicker": "Combo 3",
+      "titulo": "Produção completa + ensaio",
+      "preco": "R$ 420",
+      "preco_valor": 420,
+      "itens": [
+        "Maquiagem profissional",
+        "Cabelo completo",
+        "50 fotos digitais editadas",
+        "Ajuda na escolha do look",
+        "Cerca de 4 a 5 horas",
+        "Entrega em até 7 dias úteis"
+      ],
+      "destaque": false
+    },
+    {
+      "id": "combo-4",
+      "kicker": "Combo 4",
+      "titulo": "Só ensaio fotográfico",
+      "preco": "R$ 260",
+      "preco_valor": 260,
+      "itens": [
+        "30 fotos digitais editadas",
+        "Não inclui maquiagem nem cabelo",
+        "Entrega em até 7 dias úteis"
+      ],
+      "destaque": false
+    }
+  ],
+  "avulsos": [
+    {
+      "id": "corte-feminino",
+      "kicker": "Cabelo",
+      "titulo": "Corte feminino",
+      "preco": "R$ 60",
+      "preco_sufixo": "com escova",
+      "itens": [
+        "Camadas leves / caimento natural",
+        "Movimento e leveza",
+        "Acabamento impecável"
+      ],
+      "aviso": "Não trabalho com cortes curtos."
+    },
+    {
+      "id": "quinta-especial",
+      "kicker": "Promoção do grid",
+      "titulo": "Quinta Especial",
+      "preco": "R$ 150",
+      "itens": [
+        "Maquiagem profissional + ensaio",
+        "10 fotos editadas",
+        "Atendimento personalizado"
+      ],
+      "aviso": "Consulte no WhatsApp se a quinta ainda está disponível.",
+      "soft": true
+    }
+  ],
+  "extra": "Aniversário: mini bolo da mãe (massa e decoração) por R$ 35 — avisar com antecedência.",
+  "servicos_detalhe": [
+    {
+      "id": "maquiagem",
+      "titulo": "Maquiagem",
+      "texto": "Social, noiva (Brilho do Sim), madura, gestante e artística. Make que parece pele, não máscara.",
+      "cta": "Quero agendar maquiagem."
+    },
+    {
+      "id": "cabelo",
+      "titulo": "Cabelo",
+      "texto": "Corte feminino com camadas leves, progressiva orgânica, escova e ondas.",
+      "aviso": "Não trabalho com cortes curtos.",
+      "cta": "Quero agendar cabelo (corte não é curto)."
+    },
+    {
+      "id": "fotografia",
+      "titulo": "Fotografia",
+      "texto": "Ensaio, making of, gestante e aniversário — com orientação para se sentir à vontade diante da câmera, mesmo com vergonha ou sem costume.",
+      "cta": "Quero agendar ensaio fotográfico."
+    }
+  ],
+  "cursos": [
+    {
+      "id": "curso-pro",
+      "titulo": "Curso Pro",
+      "texto": "Formação para quem trabalha com maquiagem. Turma e valor combinamos no WhatsApp.",
+      "cta": "Curso Pro"
+    },
+    {
+      "id": "curso-automake",
+      "titulo": "Curso automake",
+      "texto": "Para você se maquiar no dia a dia e em ocasiões. Próxima turma no WhatsApp.",
+      "cta": "Curso automake"
+    }
+  ],
+  "reserva": {
+    "sinal": "R$ 30",
+    "regra": "Reagendar em até 60 dias com o mesmo sinal."
+  }
+}

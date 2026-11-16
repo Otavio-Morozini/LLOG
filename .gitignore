@@ -1,0 +1,21 @@
+# dependências (o site é sem build; só as ferramentas em tools/ podem usar)
+node_modules/
+package-lock.json
+
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editores
+.vscode/
+*.swp
+*~
+
+# saídas locais das ferramentas
+tools/.cache/
+*.log
+
+# NÃO ignorar:
+# - .cursor/  (log de sessão faz parte do histórico do projeto)
+# - assets/img/  (as fotos reais entram aqui)

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Protótipo simples — Studio Hellen Varella</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ece7e2; font-family: Arial, Helvetica, sans-serif; color: #3B1C28; }
+  .tela {
+    width: 390px;
+    background: #FDF8F5;
+    border: 1px solid #e4d4cc;
+    overflow: hidden;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: #FDF8F5;
+    border-bottom: 1px solid #f0e2db;
+  }
+  .marca { font-family: Georgia, "Times New Roman", serif; font-size: 16px; letter-spacing: 0.02em; }
+  .btn {
+    display: inline-block;
+    background: #6D2C45;
+    color: #FDF8F5;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 2px;
+  }
+  .btn.claro { background: transparent; color: #6D2C45; border: 1px solid #6D2C45; }
+  .miolo { padding: 22px 16px 28px; }
+  .olho { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6D2C45; margin: 0 0 8px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; margin: 0 0 10px; line-height: 1.2; width: 330px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  p { margin: 0 0 12px; font-size: 14px; line-height: 1.45; width: 340px; }
+  .acoes { display: flex; gap: 8px; margin-top: 8px; }
+  .foto {
+    margin-top: 16px;
+    height: 180px;
+    background: #FED5CB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6D2C45;
+    font-size: 13px;
+  }
+  .faixa { background: #FED5CB; padding: 18px 16px 22px; }
+  .tres { display: flex; gap: 8px; }
+  .caixa { flex: 1; background: #fff; border: 1px solid #f0e2db; padding: 10px; }
+  .caixa h3 { margin: 0 0 6px; font-size: 14px; font-family: Georgia, serif; font-weight: normal; }
+  .caixa p { font-size: 12px; margin: 0; }
+  .lista { display: flex; flex-direction: column; gap: 8px; }
+  .item { background: #fff; border: 1px solid #f0e2db; padding: 12px; }
+  .item h3 { margin: 0; font-size: 15px; font-family: Georgia, serif; font-weight: normal; }
+  .preco { font-size: 18px; color: #6D2C45; margin: 4px 0; font-weight: bold; }
+  .item p, .item li { font-size: 12px; }
+  .item ul { margin: 0 0 8px; padding-left: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .chip { font-size: 11px; border: 1px solid #6D2C45; color: #6D2C45; padding: 4px 8px; }
+  .chip.on { background: #6D2C45; color: #FDF8F5; }
+  .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ph { height: 110px; background: #FED5CB; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #6D2C45; text-align: center; padding: 8px; }
+  .rodape { padding: 14px 16px 18px; font-size: 11px; color: #7A3450; border-top: 1px solid #f0e2db; }
+  .nota { font-size: 12px; color: #7A3450; }
+  .escuro { background: #3B1C28; color: #FDF8F5; }
+  .escuro .olho { color: #FED5CB; }
+  .escuro h2 { color: #FDF8F5; }
+  .pill { background: #fff; padding: 12px; margin-bottom: 8px; }
+  .pill h3 { margin: 0 0 4px; font-size: 15px; font-family: Georgia, serif; font-weight: normal; }
+  .pill p { margin: 0; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">Studio de beleza e fotografia · Fraiburgo/SC</p>
+    <h1>Você vai ter dó de tirar a maquiagem.</h1>
+    <p>Maquiagem, cabelo e fotografia no mesmo atendimento. Você sai pronta e guarda o momento.</p>
+    <div class="acoes">
+      <span class="btn">Agendar meu horário</span>
+      <span class="btn claro">Ver a experiência</span>
+    </div>
+    <div class="foto">espaço para foto do ensaio</div>
+  </div>
+  <div class="rodape">Início · Diferencial · Serviços · Valores · Portfólio · Contato</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">O grande diferencial</p>
+    <h2>Tudo no mesmo lugar.</h2>
+    <p>A cliente não procura maquiagem, cabelo e foto separado. Sai pronta e recebe mais fotos do que o mercado costuma entregar.</p>
+  </div>
+  <div class="faixa">
+    <div class="tres">
+      <div class="caixa"><h3>Maquiagem</h3><p>Social, noiva, gestante e artística.</p></div>
+      <div class="caixa"><h3>Cabelo</h3><p>Escova e ondas no mesmo dia.</p></div>
+      <div class="caixa"><h3>Fotografia</h3><p>Ensaio com orientação na câmera.</p></div>
+    </div>
+  </div>
+  <div class="miolo"><p class="nota">Uma conversa, um dia, você pronta e fotografada.</p></div>
+  <div class="rodape">Tela 2 · Diferencial</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">Três ofícios</p>
+    <h2>O que você vive aqui.</h2>
+    <div class="lista">
+      <div class="item">
+        <h3>Maquiagem</h3>
+        <p>Social, noiva, madura, gestante e artística.</p>
+        <span class="btn">Quero este</span>
+      </div>
+      <div class="item">
+        <h3>Cabelo</h3>
+        <p>Camadas leves, escova e ondas.</p>
+        <p class="nota">Não trabalho com cortes curtos.</p>
+        <span class="btn">Quero este</span>
+      </div>
+      <div class="item">
+        <h3>Fotografia</h3>
+        <p>Ensaio, making of, gestante e aniversário.</p>
+        <span class="btn">Quero este</span>
+      </div>
+    </div>
+  </div>
+  <div class="rodape">Tela 3 · Serviços</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">Valores</p>
+    <h2>Preço e o que está incluso.</h2>
+    <p class="nota">Números da oferta que ela já pratica. Entram no ar depois da confirmação dela.</p>
+    <div class="lista">
+      <div class="item"><h3>Combo 1 · make + ensaio</h3><p class="preco">R$ 300</p><p>30 fotos · cerca de 2h30</p><span class="btn">Agendar</span></div>
+      <div class="item"><h3>Combo 2 · make + cabelo + ensaio</h3><p class="preco">R$ 370</p><p>45 fotos · o mais pedido</p><span class="btn">Agendar</span></div>
+      <div class="item"><h3>Combo 3 · produção completa</h3><p class="preco">R$ 420</p><p>50 fotos · ajuda de look</p><span class="btn">Agendar</span></div>
+      <div class="item"><h3>Só ensaio</h3><p class="preco">R$ 260</p><p>30 fotos, sem produção</p><span class="btn">Agendar</span></div>
+    </div>
+  </div>
+  <div class="rodape">Tela 4 · Valores · sinal e prazo ficam no “como funciona”</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">Portfólio</p>
+    <h2>Fotos por tipo de atendimento.</h2>
+    <div class="chips">
+      <span class="chip on">Social</span>
+      <span class="chip">Noiva</span>
+      <span class="chip">Gestante</span>
+      <span class="chip">Cabelo</span>
+      <span class="chip">Making of</span>
+      <span class="chip">Artístico</span>
+    </div>
+    <div class="grade">
+      <div class="ph">foto · social</div>
+      <div class="ph">foto · social</div>
+      <div class="ph">foto · processo</div>
+      <div class="ph">foto · processo</div>
+    </div>
+    <p class="nota" style="margin-top:12px">As fotos saem do Instagram, com uso de imagem liberado por ela. O lugar de cada categoria já está marcado.</p>
+  </div>
+  <div class="rodape">Tela 5 · Portfólio</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="faixa">
+    <p class="olho">A experiência</p>
+    <h2>Elegante e acolhedora.</h2>
+    <div class="pill"><h3>Confiança</h3><p>A cliente sente que está em boas mãos.</p></div>
+    <div class="pill"><h3>Exclusividade</h3><p>Cada atendimento é pensado para aquela pessoa.</p></div>
+    <div class="pill"><h3>Profissionalismo</h3><p>Experiência, cuidado e material profissional.</p></div>
+  </div>
+  <div class="miolo">
+    <p>Serve para quem se produz todo dia e para quem nunca passou um batom. Quem tem vergonha de foto também é público.</p>
+  </div>
+  <div class="rodape">Tela 6 · Experiência</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo">
+    <p class="olho">A Hellen</p>
+    <h2>Momento comum vira memória.</h2>
+    <p>Marca elegante e confortável ao mesmo tempo. Acolhe quem nunca fez maquiagem e quem já tem o próprio ritual.</p>
+    <p>Depois do atendimento, a cliente se vê mais bonita e guarda uma lembrança daquela fase.</p>
+    <p class="nota">A visão de agenda cheia e de equipe no futuro aparece como visão. O site não afirma que a equipe já existe.</p>
+    <div class="foto">espaço para retrato da Hellen</div>
+  </div>
+  <div class="rodape">Tela 7 · A Hellen · Fraiburgo/SC</div>
+</section>
+
+<section class="tela">
+  <div class="bar"><span class="marca">Hellen Varella</span><span class="btn">Agendar</span></div>
+  <div class="miolo escuro">
+    <p class="olho">Agenda</p>
+    <h2>A reserva fica no WhatsApp.</h2>
+    <p>Não há formulário nem cadastro. O botão abre a conversa já dizendo qual combo ou serviço a pessoa escolheu.</p>
+    <span class="btn" style="background:#FED5CB;color:#3B1C28">Abrir conversa</span>
+    <p style="margin-top:16px">Fraiburgo/SC<br>@hellenvarella.makeup</p>
+  </div>
+  <div class="rodape">Tela 8 · Contato · sem login e sem pagamento no site</div>
+</section>
+
+</body>
+</html>

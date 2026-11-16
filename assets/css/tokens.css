@@ -1,0 +1,98 @@
+/* =========================================================================
+   tokens.css — Design system do Studio Hellen Varella
+   Fonte: "Meu briefing.pdf" (páginas 1–3, tabela de identidade + paleta).
+   Regra: as cores e fontes abaixo são as do briefing. Tudo que é derivado
+   está marcado com "derivado". Nada aqui é inventado fora do PDF.
+   ========================================================================= */
+
+:root {
+  /* ---- Paleta do briefing (pp. 2–3) --------------------------------------- */
+  --bg:        #FDF8F5; /* Fundo */
+  --ink:       #3B1C28; /* Texto principal / Título */
+  --support:   #FED5CB; /* Cor de apoio */
+  --cta:       #6D2C45; /* CTA / Botões / Subtítulo */
+  --cta-alt:   #7A3450; /* CTA alternativo (briefing: "#6D2C45 ou #7A3450") */
+  --warm:      #B86B58; /* Cor quente */
+
+  /* ---- Derivados (transparências e papéis de superfície) ----------------- */
+  --ink-90:      rgba(59, 28, 40, 0.90);
+  --ink-70:      rgba(59, 28, 40, 0.70);
+  --ink-55:      rgba(59, 28, 40, 0.55);
+  --on-dark:     #FDF8F5;                 /* texto sobre plum — usa o Fundo */
+  --on-dark-80:  rgba(253, 248, 245, 0.82);
+  --on-dark-55:  rgba(253, 248, 245, 0.55);
+  --surface:     #FFFFFF;                 /* molduras de foto e cartões claros */
+  --line:        rgba(59, 28, 40, 0.14);
+  --line-strong: rgba(59, 28, 40, 0.28);
+  --plum:        var(--ink);              /* o texto principal também é o fundo escuro (ver painel semântico) */
+  --support-2:   #FBE7E1;                 /* apoio mais claro, para faixas suaves */
+
+  /* Acentos lidos do painel semântico (pp. 3–4) — usados só como detalhe,
+     nunca como cor de área. Documentados em docs/PAINEL-SEMANTICO.md. */
+  --caramelo: #C98B6B;
+  --dourado:  #C9A24B;
+
+  /* ---- Tipografia ------------------------------------------------------- */
+  /* Título: "Perandory Condensed (só tem no Canva)". Substituta web abaixo.
+     Se a cliente exportar o .woff2, coloque em assets/fonts/ e o @font-face
+     abaixo passa a valer automaticamente — nada mais muda. */
+  --font-display: "Perandory Condensed", "Bodoni Moda", "Times New Roman", Georgia, serif;
+  /* Corpo e botões: Poppins (Regular/Medium/SemiBold), do briefing. */
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fw-body: 400;
+  --fw-medium: 500;
+  --fw-cta: 600;   /* "CTA/Botões: Poppins SemiBold" */
+
+  /* Escala de tipo (clamp: mobile → desktop) */
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
+  --step-1:  clamp(1.18rem, 1.05rem + 0.5vw, 1.4rem);
+  --step-2:  clamp(1.6rem, 1.3rem + 1.4vw, 2.4rem);
+  --step-3:  clamp(2.1rem, 1.6rem + 2.4vw, 3.4rem);
+  --step-4:  clamp(2.6rem, 1.7rem + 4.4vw, 5rem);
+
+  /* ---- Espaçamento / ritmo -------------------------------------------- */
+  --space-2xs: 0.375rem;
+  --space-xs:  0.625rem;
+  --space-sm:  1rem;
+  --space-md:  1.6rem;
+  --space-lg:  2.6rem;
+  --space-xl:  4rem;
+  --space-2xl: 6rem;
+
+  --section-pad-y: clamp(3.4rem, 2rem + 6vw, 6.5rem);
+  --gutter: clamp(1.25rem, 0.5rem + 4vw, 4.5rem);
+
+  /* ---- Formas -------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-pill: 999px;
+  --container: 1240px;
+  --measure: 40rem;
+
+  --shadow-soft: 0 18px 40px rgba(59, 28, 40, 0.10);
+  --shadow-photo: 0 30px 60px rgba(59, 28, 40, 0.28);
+
+  --ring: 0 0 0 3px var(--support), 0 0 0 5px var(--cta);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.5s;
+}
+
+/* Perandory Condensed real.
+   Enquanto a cliente não exporta o arquivo do Canva, o @font-face abaixo
+   só tenta `local()` — quem tiver a fonte instalada no sistema a vê; os
+   demais caem para "Bodoni Moda" (substituta). SEM requisição de rede,
+   sem 404.
+   Quando o .woff2 chegar: coloque em assets/fonts/perandory-condensed.woff2
+   e DESCOMENTE a linha url() abaixo. Nada mais muda no site. */
+@font-face {
+  font-family: "Perandory Condensed";
+  src:
+    local("Perandory Condensed"),
+    local("Perandory-Condensed");
+    /* , url("../fonts/perandory-condensed.woff2") format("woff2") */
+  font-weight: 400 700;
+  font-display: swap;
+}

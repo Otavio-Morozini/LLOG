@@ -1,0 +1,39 @@
+{
+  "_fonte": "Identidade e mensagens: 'Meu briefing.pdf' (pp. 1-3). Contatos, cidade e @: herdados do repositório (sessão anterior, a partir de prints da cliente). Nada abaixo foi inventado nesta sessão — o que falta confirmar está marcado com _placeholder.",
+  "marca": {
+    "nome": "Hellen Varella",
+    "assinatura": "Studio de beleza e fotografia",
+    "cidade": "Fraiburgo, SC",
+    "mensagem_central": "Você vai ter dó de tirar a maquiagem.",
+    "posicionamento": "Para quem precisa de dar um Up na autoestima, a Hellen Varella é um Studio de beleza e fotografia que proporciona uma experiência completa de cuidado, fazendo cada cliente se sentir bonita, confiante e digna de ser lembrada.",
+    "marca_frase": "A Hellen Varella é uma marca que transforma momentos comuns em memórias especiais.",
+    "rodape_frase": "Beleza que vira lembrança."
+  },
+  "contato": {
+    "whatsapp_numero": "5549998293732",
+    "whatsapp_link_curto": "https://wa.me/message/RAVKCLUTZ6AGG1",
+    "telefone_exibicao": "(49) 99829-3732",
+    "telefone_href": "tel:+5549998293732",
+    "instagram": "https://www.instagram.com/hellenvarella.makeup/",
+    "instagram_handle": "@hellenvarella.makeup",
+    "threads": "https://www.threads.net/@hellenvarella.makeup",
+    "email_placeholder": "[EMAIL DA HELLEN — confirmar se quer publicar]",
+    "endereco_placeholder": "[ENDEREÇO DO STUDIO — confirmar se quer publicar ou manter só 'Fraiburgo, SC']",
+    "horario_placeholder": "[HORÁRIO DE ATENDIMENTO — confirmar]"
+  },
+  "mensagens_whatsapp": {
+    "_uso": "Textos pré-preenchidos para os links wa.me (assets/js/whatsapp.js monta a URL). {combo}, {servico} e {ocasiao} são substituídos.",
+    "geral": "Oi, Hellen! Vi o site e quero agendar meu horário.",
+    "combo": "Oi, Hellen! Vi o site e quero o {combo}. Cidade: Fraiburgo. Data que penso: __ / Ocasião: __",
+    "servico": "Oi, Hellen! Quero agendar {servico}.",
+    "referencias": "Oi, Hellen! Quero enviar referências de roupa e make antes do ensaio.",
+    "curso": "Oi, Hellen! Quero saber da próxima turma do {servico}.",
+    "quinta": "Oi, Hellen! A Quinta Especial ainda está disponível?",
+    "proxima": "Oi, Hellen! Quero ser a próxima."
+  },
+  "seo": {
+    "titulo": "Hellen Varella · Studio de beleza e fotografia · Fraiburgo, SC",
+    "descricao": "Maquiagem, cabelo e fotografia no mesmo lugar. Você sai pronta e guarda o momento em imagens. Studio Hellen Varella, Fraiburgo/SC.",
+    "url_canonica_placeholder": "https://[DOMINIO-QUANDO-PUBLICAR]/"
+  }
+}

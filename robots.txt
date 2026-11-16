@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Trocar pelo domínio real quando publicar:
+Sitemap: https://[DOMINIO-QUANDO-PUBLICAR]/sitemap.xml

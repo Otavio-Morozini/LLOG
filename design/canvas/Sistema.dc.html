@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,500&family=Poppins:wght@300;400;500;600;700&display=swap");
+    body { margin: 0; background: #FDF8F5; font-family: "Poppins", system-ui, sans-serif; color: #3B1C28; }
+    a { color: #6D2C45; text-decoration: none; }
+    a:hover { color: #B86B58; }
+    .display { font-family: "Bodoni Moda", "Times New Roman", Georgia, serif; }
+    .mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12px; letter-spacing: 0.02em; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; background: #FDF8F5; padding: 56px 64px;">
+
+  <div style="font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #B86B58;">Design system · briefing</div>
+  <h1 class="display" style="margin: 10px 0 40px; font-size: 46px; font-weight: 400;">Identidade Hellen Varella</h1>
+
+  <!-- PALETA -->
+  <h2 class="display" style="margin: 0 0 18px; font-size: 26px; font-weight: 500;">Paleta</h2>
+  <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-bottom: 48px;">
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #FDF8F5; border-bottom: 1px solid rgba(59,28,40,0.12);"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">Fundo</div><div class="mono" style="color: #6D2C45;">#FDF8F5</div></div>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #3B1C28;"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">Texto principal</div><div class="mono" style="color: #6D2C45;">#3B1C28</div></div>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #FED5CB;"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">Apoio</div><div class="mono" style="color: #6D2C45;">#FED5CB</div></div>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #6D2C45;"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">CTA / botões</div><div class="mono" style="color: #6D2C45;">#6D2C45</div></div>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #7A3450;"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">CTA alternativo</div><div class="mono" style="color: #6D2C45;">#7A3450</div></div>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.12); border-radius: 4px; overflow: hidden;">
+      <div style="height: 96px; background: #B86B58;"></div>
+      <div style="padding: 12px;"><div style="font-size: 13px; font-weight: 600;">Cor quente</div><div class="mono" style="color: #6D2C45;">#B86B58</div></div>
+    </div>
+  </div>
+
+  <!-- TIPOGRAFIA -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 48px;">
+    <div>
+      <h2 class="display" style="margin: 0 0 18px; font-size: 26px; font-weight: 500;">Título — Perandory Condensed</h2>
+      <div class="display" style="font-size: 120px; line-height: 0.9; color: #3B1C28;">Aa</div>
+      <div class="display" style="font-size: 34px; line-height: 1.1; color: #3B1C28; margin-top: 10px;">Você vai ter dó<br>de tirar a maquiagem.</div>
+      <p style="margin: 16px 0 0; font-size: 13px; color: #6D2C45;">Perandory Condensed só existe no Canva. Na web: <strong>Bodoni Moda</strong> como substituta (Suposição), com <span class="mono">@font-face</span> pronto para receber o arquivo real.</p>
+    </div>
+    <div>
+      <h2 class="display" style="margin: 0 0 18px; font-size: 26px; font-weight: 500;">Corpo — Poppins</h2>
+      <div style="font-size: 40px; font-weight: 300;">Aa</div>
+      <p style="margin: 14px 0 0; font-size: 15px; line-height: 1.75;">Poppins Regular para o corpo do texto: legível, redonda e acolhedora. Poppins Medium para subtítulos e destaques curtos.</p>
+      <div style="display: flex; gap: 18px; margin-top: 16px; font-size: 14px;">
+        <span style="font-weight: 300;">Light 300</span>
+        <span style="font-weight: 400;">Regular 400</span>
+        <span style="font-weight: 500;">Medium 500</span>
+        <span style="font-weight: 600;">SemiBold 600</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENTES -->
+  <h2 class="display" style="margin: 0 0 18px; font-size: 26px; font-weight: 500;">Botões e cartões</h2>
+  <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 26px;">
+    <span style="display: inline-flex; align-items: center; background: #6D2C45; color: #FDF8F5; padding: 14px 26px; border-radius: 999px; font-weight: 600; letter-spacing: 0.03em;">Agendar meu horário</span>
+    <span style="display: inline-flex; align-items: center; border: 1px solid #6D2C45; color: #6D2C45; padding: 14px 26px; border-radius: 999px; font-weight: 500; letter-spacing: 0.03em;">Ver valores</span>
+    <span style="display: inline-flex; align-items: center; background: #FED5CB; color: #3B1C28; padding: 14px 26px; border-radius: 999px; font-weight: 600; letter-spacing: 0.03em;">Chamar no WhatsApp</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;">
+    <div style="border: 1px solid rgba(59,28,40,0.14); border-radius: 4px; padding: 26px; background: #fff;">
+      <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #B86B58;">Combo 2</div>
+      <h3 class="display" style="margin: 8px 0 4px; font-size: 22px; font-weight: 500;">Make + cabelo + ensaio</h3>
+      <div class="display" style="font-size: 34px; color: #6D2C45;">R$ 370</div>
+      <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.6;">45 fotos digitais editadas · até cerca de 3h30.</p>
+    </div>
+    <div style="border: 1px solid rgba(59,28,40,0.14); border-radius: 4px; padding: 26px; background: #FED5CB;">
+      <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6D2C45;">Cartão de apoio</div>
+      <h3 class="display" style="margin: 8px 0 4px; font-size: 22px; font-weight: 500;">Quinta Especial</h3>
+      <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.6;">Fundo na cor de apoio para promoções e avisos suaves.</p>
+    </div>
+    <div style="border: 1px solid #3B1C28; border-radius: 4px; padding: 26px; background: #3B1C28; color: #FDF8F5;">
+      <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #FED5CB;">Cartão escuro</div>
+      <h3 class="display" style="margin: 8px 0 4px; font-size: 22px; font-weight: 500;">O outro lado</h3>
+      <p style="margin: 8px 0 0; font-size: 13px; line-height: 1.6; color: rgba(253,248,245,0.85);">Plum #3B1C28 como fundo — para o hero e o recorte artístico.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

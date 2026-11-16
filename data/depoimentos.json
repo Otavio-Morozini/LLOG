@@ -1,0 +1,13 @@
+{
+  "_status": "OCIOSO / SUPOSIÇÃO. O briefing NÃO define um sistema de depoimentos no site — hoje a prova social vive no destaque FEEDBACKS do Instagram. Este arquivo e assets/js/depoimentos.js ficam prontos para o dia em que a Hellen quiser trazer as falas das clientes para dentro do site (ela cita 'orgulho de postar meu trabalho' e 'indiquem meu trabalho').",
+  "_como_ativar": "1) Preencher 'itens' com depoimentos reais e AUTORIZADOS pelas clientes. 2) Colocar no index.html: <div class=\"divas\" data-depoimentos></div> dentro da seção #divas. 3) Servir o site (não abre em file://). depoimentos.js injeta os cartões.",
+  "itens": [
+    {
+      "texto": "[DEPOIMENTO REAL DA CLIENTE — pedir autorização para publicar]",
+      "cliente": "[Primeiro nome]",
+      "contexto": "[ex.: ensaio gestante, maquiagem de noiva]",
+      "data": "[AAAA-MM]",
+      "_placeholder": true
+    }
+  ]
+}

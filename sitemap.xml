@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Trocar [DOMINIO-QUANDO-PUBLICAR] pelo domínio real. tools/check-links.mjs avisa se ficar placeholder. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://[DOMINIO-QUANDO-PUBLICAR]/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://[DOMINIO-QUANDO-PUBLICAR]/obrigada.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+</urlset>

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protótipo — Studio Hellen Varella</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FDF8F5;
+      --ink: #3B1C28;
+      --support: #FED5CB;
+      --cta: #6D2C45;
+      --warm: #B86B58;
+      --line: rgba(59, 28, 40, .14);
+      --serif: "Bodoni Moda", Georgia, serif;
+      --sans: Poppins, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #efe6e1;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    header.top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+      padding: 20px 24px 12px;
+    }
+    header.top h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 32px;
+      margin: 0;
+      letter-spacing: -.02em;
+    }
+    header.top p { margin: 4px 0 0; max-width: 62ch; }
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(280px, 400px) minmax(240px, 1fr);
+      gap: 20px;
+      padding: 8px 24px 32px;
+      align-items: start;
+    }
+    nav.screens {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      position: sticky;
+      top: 12px;
+    }
+    nav.screens button {
+      text-align: left;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    nav.screens button[aria-current="true"] {
+      background: var(--ink);
+      color: var(--bg);
+    }
+    .stage { display: flex; justify-content: center; }
+    .phone {
+      width: 360px;
+      height: min(760px, calc(100vh - 120px));
+      background: var(--bg);
+      border: 10px solid var(--ink);
+      border-radius: 32px;
+      overflow: auto;
+      box-shadow: 0 18px 50px rgba(59, 28, 40, .18);
+    }
+    .tela { display: none; }
+    .tela.is-on {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+    .tela header, .hero, .dark {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 22px 18px 26px;
+    }
+    .tela header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .brand { font-family: var(--serif); letter-spacing: .04em; }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--cta);
+      margin: 0 0 6px;
+    }
+    .on-dark .eyebrow, .hero .eyebrow, .dark .eyebrow { color: var(--support); }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.05;
+      margin: 0 0 10px;
+      letter-spacing: -.02em;
+    }
+    .pad { padding: 22px 18px 28px; flex: 1 0 auto; }
+    .hero, .dark { flex: 1 0 auto; }
+    .lead { margin: 0 0 14px; }
+    .btn, .ghost {
+      display: inline-block;
+      background: var(--cta);
+      color: var(--bg);
+      text-decoration: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: 600 13px/1 var(--sans);
+      cursor: pointer;
+    }
+    .ghost { background: transparent; color: inherit; box-shadow: inset 0 0 0 1px currentColor; }
+    .hero .ghost { color: var(--bg); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .card, .pack {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      margin: 0 0 10px;
+      background: #fff;
+    }
+    .pack strong.price { display: block; font-size: 22px; margin: 4px 0; }
+    .pack.feature { background: var(--support); }
+    .note { font-size: 13px; color: var(--cta); }
+    .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .filters button, .chip {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font: 500 12px/1 var(--sans);
+      cursor: pointer;
+      color: var(--ink);
+    }
+    .filters button[aria-pressed="true"], .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+    .work { padding: 16px; border-radius: 14px; background: var(--support); margin-bottom: 8px; }
+    .work[hidden] { display: none; }
+    .pillar { display: grid; gap: 8px; }
+    .pillar div { background: #fff; border-radius: 14px; padding: 12px; }
+    details { border-bottom: 1px solid var(--line); padding: 8px 0; }
+    summary { cursor: pointer; font-weight: 600; }
+    ol.steps { margin: 0; padding-left: 18px; }
+    ol.steps li { margin: 0 0 8px; }
+    .ph {
+      height: 160px;
+      border-radius: 16px;
+      background:
+        linear-gradient(160deg, var(--support), #fff 60%);
+      display: grid;
+      place-items: end start;
+      padding: 12px;
+      color: var(--cta);
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    aside.nota {
+      background: #fff;
+      border-radius: 16px;
+      padding: 18px 18px 22px;
+      position: sticky;
+      top: 12px;
+    }
+    aside.nota h2 { font-size: 26px; }
+    aside.nota .tag {
+      display: inline-block;
+      background: var(--support);
+      border-radius: 999px;
+      padding: 3px 8px;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .sheet {
+      position: sticky;
+      bottom: 0;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 12px 14px 16px;
+      display: none;
+    }
+    .sheet.is-on { display: block; }
+    .sheet p { margin: 6px 0 0; font-size: 13px; }
+    .foot {
+      padding: 0 24px 28px;
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      nav.screens { flex-direction: row; overflow: auto; position: static; }
+      nav.screens button { white-space: nowrap; }
+      aside.nota { position: static; }
+      .phone { height: 680px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Protótipo das telas</h1>
+      <p>Studio Hellen Varella — validação com a microempreendedora. Treze telas, na ordem da vitrine. Agendar mostra a mensagem; não dispara o WhatsApp.</p>
+    </div>
+    <p id="passo" aria-live="polite">Tela 1 de 13</p>
+  </header>
+
+  <div class="layout">
+    <nav class="screens" aria-label="Telas do protótipo"></nav>
+
+    <div class="stage">
+      <div class="phone" id="phone">
+        <section class="tela is-on" id="inicio" data-titulo="Início" data-rf="RF01" data-nota="Confirme se a primeira frase continua sendo a mensagem do studio e se o retrato deste espaço pode ser uma cliente pronta, com luz quente.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="hero">
+            <p class="eyebrow">Studio de beleza e fotografia · Fraiburgo, SC</p>
+            <h2>Você vai ter dó de tirar a maquiagem.</h2>
+            <p class="lead">Maquiagem, cabelo e fotografia no mesmo lugar, num atendimento pensado só para você.</p>
+            <div class="row">
+              <button class="btn" type="button" data-msg="Oi, Hellen! Vi o site e quero agendar meu horário.">Agendar meu horário</button>
+              <button class="ghost" type="button" data-goto="experiencia">Ver a experiência</button>
+            </div>
+            <div class="ph">Lugar da foto — retrato, ainda sem arquivo</div>
+          </div>
+        </section>
+
+        <section class="tela" id="diferencial" data-titulo="O diferencial" data-rf="RF02" data-nota="Texto saído do briefing: a cliente não procura três profissionais. Ela sai pronta e recebe mais fotos do que o mercado costuma entregar.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">O grande diferencial</p>
+            <h2>Tudo no mesmo lugar.</h2>
+            <p>Você não precisa procurar maquiagem, cabelo e fotos separado. É um cuidado só — a cliente sai pronta e recebe muito mais fotos do que o mercado costuma entregar.</p>
+            <p>Quem tem vergonha ou nunca teve costume de fazer foto recebe orientação diante da câmera. Isso faz parte do atendimento.</p>
+          </div>
+        </section>
+
+        <section class="tela" id="experiencia" data-titulo="A experiência" data-rf="Identidade" data-nota="Os três sentimentos que ela pediu para a identidade transmitir. O tom é elegante e acolhedor, inclusive para quem nunca passou um batom.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad" style="background:#FED5CB">
+            <p class="eyebrow">A experiência</p>
+            <h2>Da mulher que se produz todo dia a quem nunca passou um batom.</h2>
+            <div class="pillar">
+              <div><strong>Confiança.</strong> A cliente sente que está em boas mãos.</div>
+              <div><strong>Exclusividade.</strong> Cada atendimento é pensado para aquela pessoa.</div>
+              <div><strong>Profissionalismo.</strong> Experiência, equipamento e material profissional.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tela" id="servicos" data-titulo="Serviços" data-rf="RF03" data-nota="Três ofícios. O aviso de corte curto precisa do sim dela antes de publicar.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Três ofícios, um atendimento</p>
+            <h2>O que você vive aqui.</h2>
+            <article class="card"><h3>Maquiagem</h3><p>Social, noiva (Brilho do Sim), madura, gestante e artística.</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero agendar maquiagem.">Quero esse atendimento</button></article>
+            <article class="card"><h3>Cabelo</h3><p>Corte com camadas leves, progressiva orgânica, escova e ondas.</p><p class="note">Não trabalho com cortes curtos.</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero agendar cabelo (corte não é curto).">Quero esse atendimento</button></article>
+            <article class="card"><h3>Fotografia</h3><p>Ensaio, making of, gestante e aniversário, com orientação na pose.</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero agendar ensaio fotográfico.">Quero esse atendimento</button></article>
+          </div>
+        </section>
+
+        <section class="tela" id="valores" data-titulo="Valores" data-rf="RF04" data-nota="Tela mais sensível. Cada preço é candidato, vindo da oferta que ela já pratica. Corrigir aqui antes da etapa III.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Tabela de valores</p>
+            <h2>Valores claros.</h2>
+            <article class="pack"><span>Combo 1</span><h3>Maquiagem + ensaio</h3><strong class="price">R$ 300</strong><p>30 fotos · cerca de 2h30 · até 7 dias úteis</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero o Combo 1 — Maquiagem + ensaio (R$ 300).">Agendar</button></article>
+            <article class="pack feature"><span>Combo 2 · o mais pedido</span><h3>Maquiagem + cabelo + ensaio</h3><strong class="price">R$ 370</strong><p>45 fotos · cerca de 3h30 · até 7 dias úteis</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero o Combo 2 — Maquiagem + cabelo + ensaio (R$ 370).">Agendar</button></article>
+            <article class="pack"><span>Combo 3</span><h3>Produção completa + ensaio</h3><strong class="price">R$ 420</strong><p>50 fotos · ajuda no look · 4 a 5 horas</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero o Combo 3 — Produção completa + ensaio (R$ 420).">Agendar</button></article>
+            <article class="pack"><span>Combo 4</span><h3>Só ensaio</h3><strong class="price">R$ 260</strong><p>30 fotos · sem maquiagem nem cabelo</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero o Combo 4 — Só ensaio (R$ 260).">Agendar</button></article>
+            <article class="pack"><h3>Corte feminino com escova</h3><strong class="price">R$ 60</strong><p class="note">Não trabalho com cortes curtos.</p></article>
+            <article class="pack"><h3>Quinta Especial</h3><strong class="price">R$ 150</strong><p>Make + ensaio · 10 fotos · consultar vaga</p><button class="btn" type="button" data-msg="Oi, Hellen! A Quinta Especial (R$ 150) ainda está disponível?">Consultar</button></article>
+            <p>Aniversário: mini bolo da mãe, R$ 35, com aviso antecipado. Sinal da reserva: R$ 30, remarcação em até 60 dias.</p>
+          </div>
+        </section>
+
+        <section class="tela" id="portfolio" data-titulo="Portfólio" data-rf="RF05" data-nota="Os filtros funcionam neste protótipo. As imagens ainda são lugares marcados, à espera das fotos que ela autorizar.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Portfólio</p>
+            <h2>O que você pode viver aqui.</h2>
+            <div class="filters" role="group" aria-label="Filtrar portfólio">
+              <button type="button" data-filter="todos" aria-pressed="true">Todos</button>
+              <button type="button" data-filter="social">Social</button>
+              <button type="button" data-filter="noiva">Noiva</button>
+              <button type="button" data-filter="gestante">Gestante</button>
+              <button type="button" data-filter="cabelo">Cabelo</button>
+              <button type="button" data-filter="making">Making of</button>
+              <button type="button" data-filter="artistico">Artístico</button>
+            </div>
+            <article class="work" data-cat="noiva"><strong>Noiva</strong><h3>Brilho do Sim</h3><p>Lugar da foto</p></article>
+            <article class="work" data-cat="gestante"><strong>Gestante</strong><h3>Corpo, tempo, luz</h3><p>Lugar da foto</p></article>
+            <article class="work" data-cat="social"><strong>Social</strong><h3>A melhor versão</h3><p>Lugar da foto</p></article>
+            <article class="work" data-cat="cabelo"><strong>Cabelo</strong><h3>Camadas leves</h3><p>Lugar da foto</p></article>
+            <article class="work" data-cat="making"><strong>Making of</strong><h3>O antes da foto</h3><p>Lugar da foto</p></article>
+            <article class="work" data-cat="artistico"><strong>Artístico</strong><h3>O outro lado</h3><p>Lugar da foto</p></article>
+          </div>
+        </section>
+
+        <section class="tela" id="hellen" data-titulo="A Hellen" data-rf="RF06" data-nota="A visão (equipe, equipamento) está no futuro. Não afirmar que a equipe já foi contratada. Confirmar os anos 2013 e 2021.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad" style="background:#FED5CB">
+            <p class="eyebrow">Oi, eu sou a Hellen</p>
+            <h2>Uma marca que transforma momentos comuns em memórias especiais.</h2>
+            <p>Elegante e confortável ao mesmo tempo. Acolhe quem se produz todo dia e quem nunca fez maquiagem.</p>
+            <p>Depois do atendimento, a cliente se sente acolhida, se enxerga mais bonita e guarda uma lembrança daquela fase.</p>
+            <p class="note">Visão: agenda cheia, equipe em outras áreas da beleza, investimento em equipamento. Ainda é visão.</p>
+            <ul>
+              <li>Maquiadora desde 2013 — confirmar</li>
+              <li>Fotógrafa desde 2021 — confirmar</li>
+            </ul>
+            <button class="btn" type="button" data-msg="Oi, Hellen! Vi o site e quero revelar a minha melhor versão.">Quero revelar a minha melhor versão</button>
+          </div>
+        </section>
+
+        <section class="tela" id="cursos" data-titulo="Cursos" data-rf="RF11" data-nota="Sem data e sem preço de turma. Os dois cursos só convidam a perguntar no WhatsApp.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Cursos</p>
+            <h2>Para quem atende e para quem quer se maquiar.</h2>
+            <article class="card"><h3>Curso Pro</h3><p>Formação para quem trabalha com maquiagem. Turma e valor no WhatsApp.</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero saber da próxima turma do Curso Pro.">Quero saber da próxima turma</button></article>
+            <article class="card"><h3>Curso automake</h3><p>Para o dia a dia e para ocasiões. Próxima turma no WhatsApp.</p><button class="btn" type="button" data-msg="Oi, Hellen! Quero saber da próxima turma do Curso automake.">Quero saber da próxima turma</button></article>
+          </div>
+        </section>
+
+        <section class="tela" id="divas" data-titulo="Divas" data-rf="RF12" data-nota="O desejo dela: que voltem, indiquem e tenham orgulho de postar. Depoimento dentro do site só com autorização. Hoje o caminho é o Instagram.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Divas</p>
+            <h2>O que as clientes realmente acham.</h2>
+            <p>Elas voltam sempre, indicam o trabalho e têm orgulho de postar. Os depoimentos ficam no Instagram, no destaque FEEDBACKS — nome a confirmar.</p>
+            <div class="row">
+              <span class="ghost" style="pointer-events:none">@hellenvarella.makeup</span>
+            </div>
+            <p><button class="btn" type="button" data-msg="Oi, Hellen! Quero ser a próxima.">Quero ser a próxima</button></p>
+          </div>
+        </section>
+
+        <section class="tela" id="como" data-titulo="Como funciona" data-rf="RF09" data-nota="Regras práticas do ensaio. Sinal, prazo e bolo precisam do conferido dela.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Como funciona</p>
+            <h2>Para o ensaio ter a sua cara.</h2>
+            <ol class="steps">
+              <li><strong>Roupas.</strong> O que deixa bonita e confortável. Pode mandar referência antes.</li>
+              <li><strong>Ensaio profissional.</strong> Pode trazer um objeto do trabalho.</li>
+              <li><strong>Aniversário.</strong> Mini bolo, R$ 35, avisar antes.</li>
+              <li><strong>Reserva.</strong> Sinal de R$ 30. Reagendar em até 60 dias.</li>
+              <li><strong>Fotos.</strong> Até 7 dias úteis, álbum no celular, uma rodada de ajuste.</li>
+              <li><strong>Horário.</strong> Pontualidade para aproveitar o tempo combinado.</li>
+            </ol>
+            <button class="btn" type="button" data-msg="Oi, Hellen! Quero enviar referências de roupa e make antes do ensaio.">Enviar referências</button>
+          </div>
+        </section>
+
+        <section class="tela" id="faq" data-titulo="Perguntas" data-rf="RF10" data-nota="Cinco respostas já redigidas. Cidade atendida e pagamento ficam abertos de propósito.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="pad">
+            <p class="eyebrow">Perguntas frequentes</p>
+            <h2>Antes de chamar no WhatsApp.</h2>
+            <details open><summary>Maquiagem, cabelo e foto são no mesmo dia?</summary><p>Sim. Tudo num atendimento só.</p></details>
+            <details><summary>Tenho vergonha de foto. Serve pra mim?</summary><p>Serve. A orientação diante da câmera faz parte.</p></details>
+            <details><summary>Como reservo?</summary><p>WhatsApp e sinal de R$ 30. Remarcação em até 60 dias.</p></details>
+            <details><summary>Quando recebo as fotos?</summary><p>Em até 7 dias úteis, com uma rodada de ajuste.</p></details>
+            <details><summary>Fazem corte curto?</summary><p>Não. Só camadas leves.</p></details>
+            <details><summary>Atende em outras cidades?</summary><p>Pergunta aberta para a Hellen.</p></details>
+            <details><summary>Formas de pagamento?</summary><p>Pergunta aberta para a Hellen.</p></details>
+          </div>
+        </section>
+
+        <section class="tela" id="agenda" data-titulo="Agenda" data-rf="RF07" data-nota="Sem formulário e sem calendário que reserva sozinho. A conversa começa no WhatsApp, como no Instagram.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="dark" style="min-height:520px">
+            <p class="eyebrow">Agenda</p>
+            <h2>Nossa agenda está aberta.</h2>
+            <p>Fraiburgo, SC. A conversa começa no WhatsApp.</p>
+            <button class="btn" type="button" data-msg="Oi, Hellen! Vi o site e quero agendar meu horário.">Chamar no WhatsApp</button>
+            <p>(49) 99829-3732</p>
+            <p>Instagram · Threads</p>
+            <p class="note" style="color:#FED5CB">Faixa de semanas livres só entra quando ela passar datas reais.</p>
+          </div>
+        </section>
+
+        <section class="tela" id="obrigada" data-titulo="Obrigada" data-rf="RF14" data-nota="Tela depois do contato. Pede para marcar o @ quando o trabalho ficar pronto — é o pedido dela de que as clientes postem.">
+          <header><span class="brand">Hellen Varella</span><span>Menu</span></header>
+          <div class="hero" style="min-height:520px">
+            <p class="eyebrow">Mensagem enviada</p>
+            <h2>Você vai ter dó de tirar a maquiagem.</h2>
+            <p>Quando o trabalho ficar pronto, marca @hellenvarella.makeup.</p>
+          </div>
+        </section>
+
+        <div class="sheet" id="sheet" role="status">
+          <strong>Mensagem que o site abriria no WhatsApp</strong>
+          <p id="sheet-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="nota" id="nota">
+      <span class="tag" id="nota-rf"></span>
+      <h2 id="nota-titulo"></h2>
+      <p id="nota-texto"></p>
+      <p>Percorra com a lista ao lado. No celular, a lista fica em cima. O questionário para ela responder está em <code>facul/04-questionario-validacao.md</code>.</p>
+    </aside>
+  </div>
+  <p class="foot">Protótipo da Parte II. A vitrine navegável completa é o <code>index.html</code> da raiz do projeto. Paleta e frase vêm do briefing da Hellen.</p>
+
+  <script>
+    const telas = [...document.querySelectorAll(".tela")];
+    const nav = document.querySelector("nav.screens");
+    const notaTitulo = document.getElementById("nota-titulo");
+    const notaTexto = document.getElementById("nota-texto");
+    const notaRf = document.getElementById("nota-rf");
+    const passo = document.getElementById("passo");
+    const sheet = document.getElementById("sheet");
+    const sheetText = document.getElementById("sheet-text");
+
+    telas.forEach((tela, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = (i + 1) + ". " + tela.dataset.titulo;
+      b.addEventListener("click", () => mostrar(tela.id));
+      nav.appendChild(b);
+    });
+
+    function mostrar(id) {
+      telas.forEach((t) => t.classList.toggle("is-on", t.id === id));
+      const atual = document.getElementById(id);
+      const index = telas.indexOf(atual);
+      [...nav.children].forEach((b, i) => {
+        if (i === index) b.setAttribute("aria-current", "true");
+        else b.removeAttribute("aria-current");
+      });
+      notaTitulo.textContent = atual.dataset.titulo;
+      notaTexto.textContent = atual.dataset.nota;
+      notaRf.textContent = atual.dataset.rf;
+      passo.textContent = "Tela " + (index + 1) + " de " + telas.length;
+      sheet.classList.remove("is-on");
+      document.getElementById("phone").scrollTop = 0;
+    }
+
+    document.getElementById("phone").addEventListener("click", (ev) => {
+      const go = ev.target.closest("[data-goto]");
+      if (go) { mostrar(go.dataset.goto); return; }
+      const msg = ev.target.closest("[data-msg]");
+      if (msg) {
+        sheetText.textContent = msg.dataset.msg;
+        sheet.classList.add("is-on");
+        return;
+      }
+      const filtro = ev.target.closest("[data-filter]");
+      if (!filtro) return;
+      const nome = filtro.dataset.filter;
+      filtro.parentElement.querySelectorAll("button").forEach((b) => {
+        b.setAttribute("aria-pressed", b === filtro ? "true" : "false");
+      });
+      document.querySelectorAll("#portfolio .work").forEach((w) => {
+        w.hidden = nome !== "todos" && w.dataset.cat !== nome;
+      });
+    });
+
+    mostrar("inicio");
+  </script>
+</body>
+</html>

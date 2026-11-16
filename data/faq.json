@@ -1,0 +1,33 @@
+{
+  "_fonte": "Perguntas derivadas do 'Como funciona' e das regras já no repositório (sinal, prazo, cortes, aniversário). Respostas: confirmar com a Hellen antes de publicar; itens marcados _placeholder precisam de dado real.",
+  "itens": [
+    {
+      "pergunta": "Maquiagem, cabelo e foto são no mesmo dia?",
+      "resposta": "Sim. É o diferencial do studio: você faz tudo num atendimento só, sai pronta e já sai com o ensaio feito. Não precisa procurar cada profissional separado."
+    },
+    {
+      "pergunta": "Tenho vergonha de foto e nunca me maquiei. Serve pra mim?",
+      "resposta": "Serve — é pra isso que a experiência existe. A Hellen acolhe tanto quem se produz todo dia quanto quem nunca passou um batom, e orienta pose a pose para você se sentir à vontade diante da câmera."
+    },
+    {
+      "pergunta": "Como reservo a data?",
+      "resposta": "A conversa começa no WhatsApp. A reserva é confirmada com um sinal de R$ 30, que pode ser remarcado em até 60 dias com o mesmo valor."
+    },
+    {
+      "pergunta": "Quando recebo as fotos?",
+      "resposta": "A seleção e edição são entregues em até 7 dias úteis, em álbum no celular, com uma rodada de ajuste."
+    },
+    {
+      "pergunta": "Vocês fazem corte curto?",
+      "resposta": "Não. O corte feminino é com camadas leves e caimento natural — cortes curtos não entram no atendimento."
+    },
+    {
+      "pergunta": "Atende em outras cidades?",
+      "resposta": "[CONFIRMAR: atende só em Fraiburgo/SC, atende região, ou vai até a cliente? — _placeholder]"
+    },
+    {
+      "pergunta": "Formas de pagamento?",
+      "resposta": "[CONFIRMAR formas de pagamento aceitas — _placeholder]"
+    }
+  ]
+}

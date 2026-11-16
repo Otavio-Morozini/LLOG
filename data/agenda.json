@@ -1,0 +1,15 @@
+{
+  "_status": "OCIOSO / SUPOSIÇÃO. O briefing fala em 'manter agenda cheia' e o repositório traz 'Nossa agenda está aberta', mas NÃO existe um sistema de horários definido. Este arquivo + assets/js/agenda.js ficam prontos para exibir uma faixa simples de disponibilidade que a Hellen atualiza à mão. Nada aqui vira reserva automática — a reserva continua no WhatsApp.",
+  "_como_ativar": "1) Editar 'semanas' com datas e status reais. 2) Colocar no index.html: <div class=\"agenda-strip\" data-agenda></div> na seção #agenda. 3) Servir o site. agenda.js lê este arquivo e monta os slots.",
+  "atualizado_em": "[AAAA-MM-DD]",
+  "status_legenda": {
+    "livre": "Horários abertos",
+    "poucas": "Últimas vagas",
+    "cheio": "Sem vagas"
+  },
+  "semanas": [
+    { "rotulo": "[ex.: Semana de 15/09]", "status": "livre" },
+    { "rotulo": "[ex.: Semana de 22/09]", "status": "poucas" },
+    { "rotulo": "[ex.: Semana de 29/09]", "status": "cheio" }
+  ]
+}

@@ -1,0 +1,39 @@
+<!-- =========================================================================
+     _MODELO-secao.html — modelo de uma nova seção da vitrine.
+     Copie este bloco para dentro de <main> no index.html, na posição certa,
+     e preencha os slots. Rode `node tools/check-links.mjs` depois.
+
+     Regras de estrutura (não quebrar):
+     - toda seção tem: id, class="section" (+ variação de fundo opcional),
+       um .container, e um .section-head com eyebrow + h2.
+     - variações de fundo: (nenhuma) = creme | section--support | section--support-soft
+       | section--dark (plum) | section--surface (branco).
+     - blocos animados recebem class="reveal".
+     - links de WhatsApp: class + data-wa (+ data-wa-msg="texto" OU data-wa-curto).
+     - marque cada espaço editável com data-slot="area.campo" e/ou <!-- SLOT:... -->.
+     ========================================================================= -->
+
+<section id="SLOT-id-da-secao" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">SLOT: olho (2–4 palavras, caixa alta)</span>
+      <h2 data-slot="SLOT-id.titulo">SLOT: título da seção (Perandory/Bodoni)</h2>
+      <p class="lead" data-slot="SLOT-id.lead">SLOT: 1–2 frases que explicam a seção.</p>
+    </div>
+
+    <!-- SLOT: corpo da seção — cards, lista, faixa, o que for -->
+    <div class="grid grid--3 reveal" data-slot="SLOT-id.corpo">
+      <article class="card">
+        <h3>SLOT: título do item</h3>
+        <p>SLOT: descrição curta do item.</p>
+        <a class="text-link" href="#agenda" data-wa data-wa-msg="Oi, Hellen! SLOT: intenção da cliente.">SLOT: chamada</a>
+      </article>
+    </div>
+
+    <!-- SLOT (opcional): faixa de destaque -->
+    <div class="callout reveal">
+      <p>SLOT: frase de reforço.</p>
+      <a href="#agenda" data-wa data-wa-curto>SLOT: ação</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+{
+  "name": "Hellen Varella — Studio de beleza e fotografia",
+  "short_name": "Hellen Varella",
+  "description": "Maquiagem, cabelo e fotografia no mesmo lugar. Fraiburgo, SC.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FDF8F5",
+  "theme_color": "#3B1C28",
+  "icons": [
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

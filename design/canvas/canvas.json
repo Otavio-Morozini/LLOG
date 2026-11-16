@@ -1,0 +1,13 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 2360, "title": "Home · desktop" },
+    { "file": "Mobile.dc.html", "x": 1600, "y": 0, "w": 390, "h": 1560, "title": "Home · mobile" },
+    { "file": "Direcao.dc.html", "x": 0, "y": 2560, "w": 1200, "h": 820, "title": "Direção de marca" },
+    { "file": "Sistema.dc.html", "x": 1360, "y": 2560, "w": 1200, "h": 1200, "title": "Design system" }
+  ],
+  "annotations": [
+    { "id": "nota-brief", "x": 0, "y": -150, "w": 620, "text": "Redesign da vitrine Hellen Varella a partir do briefing da cliente (Meu briefing.pdf).\nPaleta, tipografia e mensagem central vêm do PDF; o painel semântico (pp. 3–4) guia a direção de fotografia.\nPerandory Condensed é do Canva — na web entra Bodoni Moda como substituta." },
+    { "id": "nota-main", "x": 0, "y": 2400, "w": 620, "text": "Home: hero em plum com a mensagem central, faixa \"tudo no mesmo lugar\" (o diferencial, estrutural) e os três sentimentos da identidade (confiança, exclusividade, profissionalismo)." }
+  ],
+  "launch": { "view": "canvas" }
+}
